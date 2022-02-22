@@ -86,7 +86,7 @@ console.log(inter(a, b))
 
 let dif = function (a: Array<number>, b: Array<number>) {
   var result = [];
-  for (var i = 0; i < a.length; i++) {
+  for (let i = 0; i < a.length; i++) {
     if (b.indexOf(a[i]) === -1) {
       result.push(a[i]);
     }
@@ -95,3 +95,22 @@ let dif = function (a: Array<number>, b: Array<number>) {
 }
 
 console.log(dif(a, b))
+
+// Outra opção
+
+const int = (
+  conjuntoA: Array<number>,
+  conjuntoB: Array<number>,
+): Array<number> => {
+  const resultado: Array<number> = [];
+  for (let i = 0; i < conjuntoA.length; i++) {
+    for (let j = 0; j < conjuntoB.length; j++) {
+      if (conjuntoA[i] === conjuntoB[j]) {
+        resultado.push(conjuntoA[i]);
+      }
+    }
+  }
+  return resultado;
+}
+
+console.log(int(a, b));

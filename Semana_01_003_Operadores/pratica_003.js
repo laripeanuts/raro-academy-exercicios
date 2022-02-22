@@ -1,4 +1,5 @@
 // PRÁTICA AULA 3 - OPERADORES
+
 var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
     if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
         if (ar || !(i in from)) {
@@ -8,6 +9,7 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
     }
     return to.concat(ar || Array.prototype.slice.call(from));
 };
+
 // 1. Faça um algoritmo que calcule a fórmula de equação quadrática ("fórmula de bháskara").
 var bhaskara = function quadratica(a, b, c) {
     var delta = (Math.sqrt(b * b) - (4 * a * c));
@@ -24,7 +26,9 @@ var bhaskara = function quadratica(a, b, c) {
     }
 };
 bhaskara(0, 20, 30);
+
 // 2. Faça um algoritmo que recebe três valores numéricos, `a`, `b` e `c`. A partir dos valores recebidos, você precisa verificar se os valores forma um `triângulo equilátero`, um `triângulo isósceles` ou um triângulo escaleno.
+
 var qualTriangulo = function (x, y, z) {
     if (x == y && x == z) {
         return "Equilátero";
@@ -39,7 +43,9 @@ var qualTriangulo = function (x, y, z) {
 console.log(qualTriangulo(5, 5, 5));
 console.log(qualTriangulo(5, 5, 4));
 console.log(qualTriangulo(5, 2, 4));
+
 // 3. Faça um algoritmo que recebe um array de numeros, e retorne um novo array, com os objetos ordenados. Pede-se que não se utilize métodos prontos do objeto de array, como o [array.sort()] Espera-se que você construa o algoritmo por completo. `Dica`: boas escolhas para esta implementação: `bubble sort` ou `selection sort`.
+
 var bubbleSort = function (array) {
     for (var i = 0; i < array.length; i++) {
         for (var j = i + 1; j < array.length; j++) {
@@ -54,12 +60,15 @@ var bubbleSort = function (array) {
 };
 var numeros = [7, 30, 11, 27, 17, 10, 26, 5];
 console.log(bubbleSort(numeros));
-// // Para os exercícios 4, 5 e 6, considere os dois conjuntos abaixo:
+
+// Para os exercícios 4, 5 e 6, considere os dois conjuntos abaixo:
 var a = [1, 2, 3, 4, 5, 6];
 var b = [4, 4, 5, 6, 7, 8];
+
 // 4. Implementar a união dos grupos a e b. Os valores do objeto resultante devem ser todos únicos
 var uniao = __spreadArray(__spreadArray([], a, true), b, true);
 console.log(uniao);
+
 // 5. Implementar a interseção dos gupos a e b.
 var inter = function (a, b) {
     var result = [];
