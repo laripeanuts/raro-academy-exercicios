@@ -9,17 +9,19 @@ const alunos = [
   { nome: "Ana", nota: 8.7, bolsista: true },
 ];
 
-function pick(itens: any[], chaves: string[]) {
+type meuObj = Record<string, unknown>
+
+function pick<T extends meuObj>(itens: T[], ...chaves: (keyof T)[]) {
   return itens.map(function(item) {
-    const novoAluno: any = {};
+    const novoItens: meuObj = {};
     chaves.map(function(chave) {
-      return novoAluno[chave] = item[chave];
+      return (novoItens as T)[chave] = item[chave];
       });
-    return novoAluno;
+    return novoItens;
   });
 }
 
-console.log(pick(alunos, ["nome", "nota"]));
+console.log(pick(alunos, "nome", "bolsista"));
 
 // METODO 2 COLECT
 
@@ -80,7 +82,7 @@ console.log(omit(alunos, ["nome", "nota"]));
 // );
 
 
-// METODO CLASS OBJ
+// // METODO CLASS OBJ
 // class Aluno {
 //   constructor(nome: string, nota: number, bolsista: boolean) {
 //     this.nome = nome;
@@ -100,13 +102,23 @@ console.log(omit(alunos, ["nome", "nota"]));
 //   new Aluno("Ana", 8.7, true),
 // ];
 
-// function pick(alunos: Aluno[], chaves: string[]) {
-//   return alunos.map(function(aluno) {
-//     const novoAluno: any = {};
-//     chaves.map(function(chave) {
-//       return novoAluno[chave] = aluno[chave];
-//       });
-//     return novoAluno;
-//     });
-// }
-// console.log(pick(alunos, ["nome", "nota"]));
+// // function pick(alunos: Aluno[], chaves: string[]) {
+// //   return alunos.map(function(aluno) {
+// //     const novoAluno: any = {};
+// //     chaves.map(function(chave) {
+// //       return novoAluno[chave] = aluno[chave];
+// //       });
+// //     return novoAluno;
+// //     });
+// // }
+// // console.log(pick(alunos, ["nome", "nota"]));.
+
+// const alunos2 = [
+//   { nome: "João", nota: 7.3, bolsista: false },
+//   { nome: "Maria", nota: 9.2, bolsista: true },
+//   { nome: "Pedro", nota: 9.8, bolsista: false },
+//   { nome: "Ana", nota: 8.7, bolsista: true },
+// ]; 
+
+// console.log(alunos)
+// console.log(alunos2)

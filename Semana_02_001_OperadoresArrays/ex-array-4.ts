@@ -20,11 +20,11 @@ function orderBy(alunos: any[], chaves: string[ ]){
 
 function collect(itens: any[], chaves: string[]) {
   return itens.map(function(item) {
-    const novoAluno: any = {};
+    const novoItens: any = {};
     chaves.map(function(chave) {
-      return novoAluno[chave] = item[chave];
+      return novoItens[chave] = item[chave];
       });
-    return novoAluno;
+    return novoItens;
     });
 }
 
