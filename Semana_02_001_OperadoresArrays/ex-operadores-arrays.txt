@@ -1,0 +1,119 @@
+// 1. Abaixo você tem a lista de todos os ingredientes necessários para fazer um Hambúrguer. Utilizando o reduce, como você pode fazer para unir todos os itens do array em uma única string?
+
+  const ingredientes: string[] = [
+    '2 hambúrgueres',
+    'alface',
+    'queijo',
+    'molho especial',
+    'cebola',
+    'picles',
+    'pão com gergelim'
+  ];
+
+  // METODO 1 
+  const resultado = ingredientes.reduce(function(acumulador: string, atual: string):string { 
+    return acumulador + atual;
+  })
+
+  console.log(`Exercício 1 - Metodo 1: ${resultado} `);
+
+  // METODO 2 
+  const fazUmBigMac = (ingredientes: string[]): string => {
+    return ingredientes.reduce((acumulador: string, atual: string, teste): string => acumulador + atual)
+  }
+
+  console.log(`Exercício 1 - Metodo 2: ${fazUmBigMac(ingredientes)} `);
+
+//2. A lista de meses abaixo está incompleta (e incorreta!). Utilize os métodos do array para adicionar os meses faltantes. Como adicionar os meses de "fev", "mai", "ago", "nov" nas posições corretas?
+
+  const meses = ["jan", "mar", "mar", "abr", "jun", "jul", "set", "out", "dez"];
+
+  //splice(indice, deleteCount, Element+)
+  meses.splice(1, 0, "fev");
+  meses.splice(2, 1);
+  meses.splice(4, 0, 'mai');
+  meses.splice(7, 0, 'ago');
+  meses.splice(10, 0, 'nov');
+
+  console.log(`Exercício 2: ${meses} `);
+
+// 3. Implementar o método de pick que receba um parâmetro do tipo array de objetos, e outro parâmetro do tipo array de strings. Este método deverá retornar todos os itens do array original, porém, mantendo somente os atributos com os nomes passados no segundo atributo. Importante: o array original deve ser mantido intacto. Abaixo, segue um exemplo do funcionamento esperado:
+
+const alunos = [
+  { nome: "João", nota: 7.3, bolsista: false },
+  { nome: "Maria", nota: 9.2, bolsista: true },
+  { nome: "Pedro", nota: 9.8, bolsista: false },
+  { nome: "Ana", nota: 8.7, bolsista: true },
+];
+
+ // METODO 1 MAP
+
+function pick(item: any[], chaves: string[]) {
+  return item.map(function(item) {
+    const novoAluno: any = {};
+    chaves.map(function(chave) {
+        novoAluno[chave] = item[chave];
+        return item[chave];
+      })
+    return novoAluno
+    })
+}
+console.log(pick(alunos, ["nome", "nota"]));
+
+// METODO 2 COLECT
+
+ function colect(item: any[], chaves: string[]) {
+  return item.map(function(item) {
+    return chaves.map(function(chave) {
+      return item[chave];
+    })
+  })
+}
+console.log(colect(alunos, ["nome", "nota"]));
+
+// METODO 3 OMIT
+
+function omit(item: any[], chave: string[]) {
+  return item.map(function(item) {
+    const obj = {...item};
+    chave.forEach(function(chave){
+      delete obj[chave];
+    })
+    return obj
+  })
+}
+
+console.log(omit(alunos, ["nome", "nota"]));
+
+// METODO 4 COMPLEX OBJ
+
+//  type complexObject = Record<string, unknown>
+//  const pick1 = <T extends complexObject>(
+//    records: T[],
+//    ...args: (keyof T)[]
+//  ): complexObject[] => {
+//    const resultado: complexObject[] = [];
+
+//    for(const item of records) {
+//      const objeto: complexObject = {}
+//      for(const chave of args) {
+//        (objeto as T)[chave] = item[chave];
+//      } 
+//      resultado.push(objeto);
+//    }
+//    return resultado;
+// }
+
+// function pick(items, chaves) {
+//   return items.map(function(item) {
+//     return chaves
+//   })
+// }
+
+// console.log(
+//   JSON.stringify(
+//   pick(alunos, ["nome", "nota"]),
+//   null,
+//   2
+//   )
+// );
