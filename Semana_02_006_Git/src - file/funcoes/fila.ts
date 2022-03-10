@@ -23,7 +23,6 @@ const ARQUIVO_DE_FILA = `${resolve('.')}/files/fila.txt`;
 // escreveNaFila
 // consumirDaFila
 
-//Ok
 export async function zerarAquivo(): Promise<void> {
   return new Promise ((resolve, reject) => {
     escreveArquivo('');
@@ -31,12 +30,11 @@ export async function zerarAquivo(): Promise<void> {
   });
 };
 
-//Ok
 export async function leArquivo(): Promise<string> {
   return new Promise((resolve, reject) => {
-    readFile(ARQUIVO_DE_FILA, 'utf8', (err, resultado) => {
-      if (err) {
-        reject(err);
+    readFile(ARQUIVO_DE_FILA, 'utf8', (error, resultado) => {
+      if (error) {
+        reject(error);
       }
   
       resolve(resultado);
@@ -44,12 +42,11 @@ export async function leArquivo(): Promise<string> {
   });
 }
 
-// Ok
 export async function escreveArquivo(texto: string): Promise<void> {
   return new Promise((resolve, reject) => {
-    writeFile(ARQUIVO_DE_FILA, texto, 'utf8', function(err) {
-      if (err) {
-        reject(err);
+    writeFile(ARQUIVO_DE_FILA, texto, 'utf8', function(error) {
+      if (error) {
+        reject(error);
       }
   
       resolve();
@@ -66,6 +63,7 @@ export async function escreveNaFila(texto: string): Promise<void> {
       console.log('texto escrito no arquivo');
     }).catch((error) => {
       console.log(error);
+
     });
 
   }).catch((error) => {
@@ -78,11 +76,13 @@ export async function consumirDaFila() {
   leArquivo().then((textoAtual) => {
 
     console.log('texto encontrado anteriormente no arquivo', textoAtual);
-    const [linhaConsumida, ...linhas] = textoAtual.split('\n');
-    console.log('======== linha consumida', linhaConsumida);
 
+    const [linhaConsumida, ...linhas] = textoAtual.split('\n');
+
+    console.log('======== linha consumida', linhaConsumida);
     escreveArquivo(linhas.join('\n')).then(() => {
-           console.log('texto escrito no arquivo');
+      console.log('texto escrito no arquivo');
+
     }).catch((error) => {
       console.log(error);
 
@@ -90,5 +90,8 @@ export async function consumirDaFila() {
 
   }).catch((error) => {
     console.log(error);
+
   });
+
+  return "";
 }

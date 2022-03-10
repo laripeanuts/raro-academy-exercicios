@@ -17,4 +17,4 @@ export const uniq = <T>(args: T[]): T[] => {
   }, [])
  
   return resultado;
-};
+}

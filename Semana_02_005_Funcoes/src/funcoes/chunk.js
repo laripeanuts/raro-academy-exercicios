@@ -1,3 +1,4 @@
+"use strict";
 /**
  * Cria um array de grupos de elementos divididos em tamanho máximo igual ao parâmetro
  * "tamanho". O último elemento deste novo array deverá conter o restante dos itens,
@@ -11,14 +12,10 @@
  * @param tamanho numero que representa o tamanho máximo de cada grupo.
  * @returns
  */
-
-export const chunk = (valores: number[], tamanho: number): number[][] => {
-  let novoArray = [];
-  let pedaco = valores.length / tamanho;
-
-  for (let i = 0, j = 0; i < pedaco; i++, j += tamanho) {
-    novoArray[i] = valores.slice(j, j + tamanho);
-  }
-
-  return novoArray;
+exports.__esModule = true;
+exports.chunk = void 0;
+var chunk = function (valores, tamanho) {
+    return null;
 };
+exports.chunk = chunk;
+console.log((0, exports.chunk)([1, 2, 3, 4, 5], 2));

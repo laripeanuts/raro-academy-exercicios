@@ -8,7 +8,8 @@
  * 
  * @returns somente os itens definidos.
  */
- export const compact = (items: unknown[]): unknown[] => {
+
+export function compact(items: unknown[]): unknown[]{
   let novoArray = [];
   for (let i = 0; i < items.length; i++) {
     if (items[i]) {
@@ -17,3 +18,4 @@
   }
   return novoArray;
 };
+
