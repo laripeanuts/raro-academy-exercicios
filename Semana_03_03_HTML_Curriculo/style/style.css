@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@200&display=swap');
+
+:root {
+  --grey: #a09fa2;
+  --greyLight: #CCCCCC;
+  --white: #FFFFFF;
+  --black: #313131;
+  --pink: #ed3d76;
+  --green: #045151;
+}
+
+html, body {
+  background: var(--greyLight);
+  font-family: Lato, helvetica, arial, sans-serif;
+  font-size: 14px;
+}
+
+header {
+  background: var(--black);
+  color: var(--greyLight);
+}
+
+nav {
+
+}
+
+main .card {
+  padding: 20px;
+  color: var(--black);
+  background-color: var(--white);
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+  -moz-box-shadow: 0 10px 6px -6px #777;
+  box-shadow: 0 10px 6px -6px #777;
+  text-align: justify;
+}
+
+aside .container {
+
+}
+
+aside {
+  background: var(--green);
+  color: var(--greyLight);
+}
+
+aside .contato {
+}
+
+aside .skills {
+}
+
+aside .idiomas {
+
+}
+
+#foto {
+  background-image: url("../images/profile.jpg");
+  height: 300px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+footer {
+  background: var(--black);
+  color: var(--greyLight);
+}
+
+.btnIdioma {
+  color: var(--greyLight);
+  background: var(--green);
+  border: none;
+  text-decoration: none;
+  padding: 10px;
+  font-size: 12px;
+}
+
+.btnIdioma:hover {
+  color: var(--grey);
+}
+
+h2 {
+  margin: 0;
+  color: var(--black);
+  font-size: 150%;
+  padding: 15px;
+}
+
+h3 {
+  padding: 0;
+  color: var(--black);
+  font-size: 120%;
+}
+
+dd {
+  padding-left: 20px;
+  color: #9a9a9a;
+}
+
+a .icon {
+  opacity: 0.5;
+  margin-left: 5px;
+  width: 25px;
+}
+
+a .icon:hover {
+  opacity: 1;
+}
+
