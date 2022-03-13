@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@200&display=swap');
 
 :root {
-  --grey: #a09fa2;
+  --grey: #706f73;
   --greyLight: #CCCCCC;
-  --white: #FFFFFF;
+  --white: #f7f7f7;
   --black: #313131;
   --pink: #ed3d76;
   --green: #045151;
@@ -12,7 +12,6 @@
 html, body {
   background: var(--greyLight);
   font-family: Lato, helvetica, arial, sans-serif;
-  font-size: 14px;
 }
 
 header {
@@ -20,37 +19,19 @@ header {
   color: var(--greyLight);
 }
 
-nav {
-
-}
-
 main .card {
   padding: 20px;
   color: var(--black);
   background-color: var(--white);
+  border-radius: 5px;
   -webkit-box-shadow: 0 10px 6px -6px #777;
   -moz-box-shadow: 0 10px 6px -6px #777;
   box-shadow: 0 10px 6px -6px #777;
-  text-align: justify;
-}
-
-aside .container {
-
 }
 
 aside {
   background: var(--green);
   color: var(--greyLight);
-}
-
-aside .contato {
-}
-
-aside .skills {
-}
-
-aside .idiomas {
-
 }
 
 #foto {
@@ -69,32 +50,34 @@ footer {
 .btnIdioma {
   color: var(--greyLight);
   background: var(--green);
-  border: none;
   text-decoration: none;
+  border: none;
+  border-radius: 5px;
   padding: 10px;
-  font-size: 12px;
+  font-weight: bold;
 }
 
 .btnIdioma:hover {
-  color: var(--grey);
+  color: var(--green);
+  font-weight: bold;
+  background: var(--white);
+}
+
+h1 {
+  color: var(--white);
 }
 
 h2 {
-  margin: 0;
   color: var(--black);
-  font-size: 150%;
-  padding: 15px;
 }
 
 h3 {
-  padding: 0;
   color: var(--black);
   font-size: 120%;
 }
 
 dd {
-  padding-left: 20px;
-  color: #9a9a9a;
+  color: var(--grey);
 }
 
 a .icon {
@@ -107,3 +90,14 @@ a .icon:hover {
   opacity: 1;
 }
 
+p {
+  text-align: justify;
+}
+
+.detalhes p {
+  padding-left: 20px;
+}
+
+.detalhes summary {
+  font-weight: bold;
+}
