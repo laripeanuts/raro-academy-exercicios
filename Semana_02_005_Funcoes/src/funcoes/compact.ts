@@ -9,5 +9,11 @@
  * @returns somente os itens definidos.
  */
  export const compact = (items: unknown[]): unknown[] => {
-  return null;
+  let novoArray = [];
+  for (let i = 0; i < items.length; i++) {
+    if (items[i]) {
+      novoArray.push(items[i]);
+    }
+  }
+  return novoArray;
 };

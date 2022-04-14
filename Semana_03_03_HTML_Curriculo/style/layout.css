@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@200&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body .container {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-areas:  "aside header"
+                        "aside main"
+                        "footer footer";
+  width: 100%;
+  height: 100%;
+}
+
+header {
+  grid-area: header;
+  height: 100px;
+}
+
+header .container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 10px 30px 10px 30px;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.btnIdioma {
+  margin-left: 5px;
+}
+
+main .container {
+  grid-area: main;
+  display: flex;
+	flex-direction: column;
+  padding: 0px 30px 30px 30px;
+}
+
+aside {
+  grid-area: aside;
+}
+
+aside * {
+  padding: 1px;
+}
+
+#foto {
+  grid-area: foto;
+}
+
+footer {
+  grid-area: footer;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+aside .info {
+  padding: 20px;
+  display: block;
+  flex-direction: columns;
+}
+
+aside .info .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+dt {
+  padding: 10px;
+}
+
+dd {
+  padding-left: 30px;
+}
+
+table {
+  text-align: left;
+  padding-bottom: 15px;
+}
+
+h1 {
+  margin-right: 20px;
+}
+
+h2 {
+  padding: 20px;
+}
+
+h4 {
+  padding: 10px;
+}
+  
+ul {
+  padding-left: 20px;
+}
